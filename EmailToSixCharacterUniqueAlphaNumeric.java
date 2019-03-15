@@ -3,7 +3,7 @@ package com;
 public class EmailToSixCharacterUniqueAlphaNumeric {
 
     public static void main(String args[]) {
-        String str = "pawan.singh@nobroker.in";
+        String str = "test.email@gmail.com";
         System.out.println("Str1 : " + str.hashCode());
         System.out.println("Str1HExCustom : " + getUnsignedString(str.hashCode()));
     }
