@@ -1,14 +1,19 @@
 package com;
 
-public class EmailToSixCharacterUniqueAlphaNumeric {
+public class Temp {
 
     public static void main(String args[]) {
-        String str = "test.email@gmail.com";
+        String str = "test.email@example.com";
         System.out.println("Str1 : " + str.hashCode());
-        System.out.println("Str1HExCustom : " + getUnsignedString(str.hashCode()));
+        System.out.println("Str1HExCustom : " + getShortedCodeString(str));
     }
 
-    public static String getUnsignedString(int number) {
+    public static String getShortedCodeString(String email) {
+        int number = email.hashCode();
+        boolean negate = false;
+        if(number < 0) {
+            negate = true;
+        }
         char[] grammer = new char[36];
         grammer[0] = '0';
         grammer[1] = '1';
@@ -67,7 +72,12 @@ public class EmailToSixCharacterUniqueAlphaNumeric {
         for(int i = value.length() -1; i > -1 ; i--) {
             reverseValue = reverseValue + value.charAt(i);
         }
-        return reverseValue;
+        if(negate) {
+            return reverseValue.toUpperCase();
+        } else {
+            return reverseValue;
+        }
+
     }
 
 }
