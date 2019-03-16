@@ -4,8 +4,7 @@ public class Temp {
 
     public static void main(String args[]) {
         String str = "test.email@example.com";
-        System.out.println("Str1 : " + str.hashCode());
-        System.out.println("Str1HExCustom : " + getShortedCodeString(str));
+        System.out.println("ShortedStringCode : " + getShortedCodeString(str));
     }
 
     public static String getShortedCodeString(String email) {
